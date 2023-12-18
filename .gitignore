@@ -19,6 +19,7 @@ dist/
 wandb/
 nohup/
 slurm_outputs/
+data-synthetic
 
 # third_party
 third_party/mosesdecoder

@@ -84,3 +84,8 @@ Sample SQLs for Spider source domains and translate them into natural language u
 where `ratio` is chosen from {3, 6}, `max_actions` is chosen from {64, 128}. By default, the sampled and synthesized data are placed under `data-synthetic`.
 For sanity check, you should be able to reproduce the data 
 in `data-spider-with-ssp-synthetic` with `ratio` 3 and `max_actions` 128.
+
+### Other tips
+(Added 2023.12.18)
+1. Installing environment with default `./setup.sh' will cause segmentation error due to mismatch of cuda version. Please install latest pytorch and transformers manually.
+Or you can change the "~=" to ">=" in `setup.py` to install the latest version of pytorch and transformers. (make sure to install python==3.8 instead of 3.7)

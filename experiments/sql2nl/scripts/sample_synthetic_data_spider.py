@@ -2,8 +2,13 @@
 import json
 import sys
 import os
+import faulthandler
+faulthandler.enable()
+
+
 import collections
 from tensor2struct.utils import registry, pcfg, random_state
+
 
 data_path = "../../data/spider/raw"
 train_data_config = {
@@ -74,7 +79,7 @@ if __name__ == "__main__":
         f"{data_dir}/sampled-sql-{synthetic_program_ratio}-{max_action_for_sampling}.source",
         "w",
     ) as f2:
-        json.dump(new_examples, f1)
+        json.dump(new_examples, f1, indent=4)
         for example in new_examples:
             f2.write(example["query"])
             f2.write("\n")
