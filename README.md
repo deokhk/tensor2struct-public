@@ -10,11 +10,14 @@ tensor2struct is a package that contains a set of neural semantic parsers based 
 
 
 ## Setup
+We modified the original README to run on latest cuda device.
+In the original README, it is recommended to use python 3.7, but we used python 3.8.
+Also, setup.py is modified to use latest version of pytorch and transformers.
 
 Create a virtual environment and run the setup script.
 
 ```
-conda create --name tensor2struct python=3.7
+conda create --name tensor2struct python=3.8
 conda activate tensor2struct
 ./setup.sh
 ```
@@ -26,6 +29,10 @@ In general, the raw data is expected to be placed under "/data/TASK\_NAME/raw" w
 
 Make `log/` and `ie_dir/` which will be used for storing checkpoints and predictions (during inference).
 
+
+## Synthesizing SQL from PCFG
+Our interest here is to synthesize SQL from PCFG induced from Spider dataset.
+To do so, go to `experiments/sql2nl/` and read README. Note that we used ratio 6 and max\_actions 128 to synthesize data.
 
 ##  Experiments
 
